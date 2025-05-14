@@ -1,0 +1,157 @@
+/* Auth Pages Styles */
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    background-color: var(--body-bg);
+    padding: 2rem;
+  }
+  
+  .branding {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 0.5rem;
+  }
+  
+  .branding h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+  
+  .branding h1 span {
+    color: var(--primary-color);
+  }
+  
+  .tagline {
+    font-size: 1.25rem;
+    color: var(--gray-600);
+    margin-bottom: 0;
+  }
+  
+  .auth-card {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  
+  .auth-sidebar {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+  }
+  
+  .auth-sidebar h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+  }
+  
+  .auth-sidebar p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .new-account {
+    margin-top: auto;
+    font-size: 0.9rem;
+  }
+  
+  .new-account a {
+    color: var(--white);
+    text-decoration: underline;
+    font-weight: 600;
+  }
+  
+  .auth-form {
+    padding: 3rem 2rem;
+    width: 60%;
+  }
+  
+  .auth-form h2 {
+    margin-bottom: 2rem;
+  }
+  
+  .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .remember {
+    display: flex;
+    align-items: center;
+  }
+  
+  .remember input {
+    margin-right: 0.5rem;
+    width: auto;
+  }
+  
+  .forgot-link {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+  }
+  
+  .auth-form button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  
+  .footer {
+    text-align: center;
+    color: var(--gray-600);
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .auth-card {
+      flex-direction: column;
+    }
+    
+    .auth-sidebar,
+    .auth-form {
+      width: 100%;
+    }
+    
+    .auth-sidebar {
+      padding: 2rem;
+    }
+    
+    .form-options {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .remember {
+      margin-bottom: 1rem;
+    }
+  }
+  

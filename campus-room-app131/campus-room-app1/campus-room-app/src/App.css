@@ -1,0 +1,11 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Import all other stylesheets */
+@import './styles/base.css';
+@import './styles/auth.css';
+@import './styles/dashboard.css';
+@import './styles/modal.css';

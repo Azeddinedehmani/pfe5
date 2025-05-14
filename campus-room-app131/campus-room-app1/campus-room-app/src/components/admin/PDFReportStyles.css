@@ -1,0 +1,292 @@
+/* src/components/admin/PDFReportStyles.css */
+
+/* General styling for the PDF report */
+.pdf-report-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: white;
+  }
+  
+  .pdf-report-content {
+    padding: 20px;
+    background-color: white;
+  }
+  
+  /* Report header styling */
+  .report-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 15px;
+  }
+  
+  .report-header h1 {
+    margin: 0;
+    color: #2a4365;
+    font-size: 24px;
+  }
+  
+  .report-date {
+    font-style: italic;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  /* Summary section styling */
+  .pdf-summary-section {
+    margin-bottom: 30px;
+  }
+  
+  .pdf-summary-section h2 {
+    color: #2a4365;
+    font-size: 18px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-top: 0;
+  }
+  
+  .pdf-summary-grid {
+    margin-top: 15px;
+  }
+  
+  .summary-row {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  
+  .summary-cell {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    margin-right: 15px;
+    background-color: #f8fafc;
+  }
+  
+  .summary-cell:last-child {
+    margin-right: 0;
+  }
+  
+  .summary-cell h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #4a5568;
+    font-size: 14px;
+  }
+  
+  .stat-large {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #3182ce;
+  }
+  
+  .stat-medium {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #3182ce;
+  }
+  
+  /* Table section styling */
+  .pdf-table-section {
+    margin-bottom: 30px;
+    page-break-inside: avoid;
+  }
+  
+  .pdf-table-section h3 {
+    color: #2a4365;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .pdf-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  
+  .pdf-table th {
+    background-color: #edf2f7;
+    border: 1px solid #cbd5e0;
+    padding: 8px;
+    text-align: left;
+    font-weight: bold;
+    color: #2d3748;
+  }
+  
+  .pdf-table td {
+    border: 1px solid #cbd5e0;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .pdf-table tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+  
+  /* Actions bar (only visible on screen) */
+  .report-actions {
+    padding: 15px;
+    background-color: #f7fafc;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .report-actions h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #2a4365;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .action-buttons button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .btn-primary {
+    background-color: #3182ce;
+    color: white;
+    border: none;
+  }
+  
+  .btn-secondary {
+    background-color: #4a5568;
+    color: white;
+    border: none;
+  }
+  
+  .btn-cancel {
+    background-color: #e2e8f0;
+    color: #4a5568;
+    border: 1px solid #cbd5e0;
+  }
+  
+  /* Footer styling */
+  .report-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #e2e8f0;
+    font-size: 12px;
+    color: #718096;
+  }
+  
+  /* Loading and error states */
+  .loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3182ce;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    margin: 20px auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .error-message {
+    padding: 20px;
+    background-color: #fed7d7;
+    border-left: 5px solid #e53e3e;
+    margin-bottom: 20px;
+  }
+  
+  .error-message h3 {
+    color: #c53030;
+    margin-top: 0;
+  }
+  
+  /* Print-specific styles */
+  @media print {
+    @page {
+      size: portrait;
+      margin: 0.5in;
+    }
+    
+    body * {
+      visibility: hidden;
+    }
+    
+    .pdf-report-content, .pdf-report-content * {
+      visibility: visible;
+    }
+    
+    .pdf-report-content {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+    
+    .print-hide {
+      display: none !important;
+    }
+    
+    /* Table adjustments for print */
+    .pdf-table {
+      width: 100%;
+      page-break-inside: avoid;
+      font-size: 10pt;
+    }
+    
+    .pdf-table th, .pdf-table td {
+      padding: 5pt;
+    }
+    
+    /* Ensure page breaks happen at appropriate sections */
+    .pdf-table-section {
+      page-break-inside: avoid;
+      margin-bottom: 15pt;
+    }
+    
+    /* Adjust spacing for print */
+    .pdf-summary-section {
+      margin-bottom: 15pt;
+    }
+    
+    .report-header {
+      margin-bottom: 15pt;
+    }
+    
+    /* Ensure footer is on every page */
+    .report-footer {
+      position: running(footer);
+    }
+    
+    @page {
+      @bottom-center {
+        content: element(footer);
+      }
+      
+      @bottom-right {
+        content: "Page " counter(page) " of " counter(pages);
+      }
+    }
+    
+    /* Counter for page numbers */
+    .page-number:before {
+      content: counter(page);
+    }
+  }

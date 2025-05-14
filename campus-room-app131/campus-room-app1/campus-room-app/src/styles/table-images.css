@@ -1,0 +1,17 @@
+.table-image-preview {
+    width: 80px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+  }
+  
+  .table-image-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }

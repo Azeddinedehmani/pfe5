@@ -1,0 +1,130 @@
+/* Table Styles */
+.data-table-container {
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+  }
+  
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white);
+    box-shadow: var(--shadow-sm);
+    border-radius: var(--border-radius-md);
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    vertical-align: middle;
+  }
+  
+  .data-table th {
+    background-color: var(--gray-100);
+    font-weight: 600;
+    color: var(--gray-700);
+    border-bottom: 2px solid var(--gray-300);
+    white-space: nowrap;
+  }
+  
+  .data-table tbody tr {
+    border-bottom: 1px solid var(--gray-200);
+    transition: background-color var(--transition-speed) ease;
+  }
+  
+  .data-table tbody tr:hover {
+    background-color: var(--gray-100);
+  }
+  
+  .data-table tbody tr:last-child {
+    border-bottom: none;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Table Actions */
+  .table-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  /* Action Buttons */
+  .btn-table {
+    background-color: transparent;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-view {
+    color: var(--primary-color);
+    background-color: var(--primary-light);
+  }
+  
+  .btn-view:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
+  
+  .btn-edit {
+    color: var(--success-color);
+    background-color: #d1e7dd;
+  }
+  
+  .btn-edit:hover {
+    background-color: var(--success-color);
+    color: var(--white);
+  }
+  
+  .btn-delete {
+    color: var(--danger-color);
+    background-color: #f8d7da;
+  }
+  
+  .btn-delete:hover {
+    background-color: var(--danger-color);
+    color: var(--white);
+  }
+  
+  /* Responsive Tables */
+  @media (max-width: 768px) {
+    .data-table th,
+    .data-table td {
+      padding: 0.5rem;
+    }
+    
+    .table-actions {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+    
+    .btn-table {
+      width: 100%;
+    }
+    
+    /* Optional: Collapsing table for small screens */
+    .data-table-responsive th:not(:first-child),
+    .data-table-responsive td:not(:first-child) {
+      display: none;
+    }
+    
+    .data-table-responsive th:first-child,
+    .data-table-responsive td:first-child {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+  
