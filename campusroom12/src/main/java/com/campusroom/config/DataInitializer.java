@@ -12,7 +12,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class DataInitializer {
-
     private static final Logger log = LoggerFactory.getLogger(DataInitializer.class);
     
     private final UserRepository userRepository;
@@ -54,7 +53,7 @@ public class DataInitializer {
                 student.setFirstName("Student");
                 student.setLastName("Jones");
                 student.setEmail("student@example.com");
-                admin.setPassword(passwordEncoder.encode("student123"));
+                student.setPassword(passwordEncoder.encode("student123")); // Fixed this line
                 student.setRole(User.Role.STUDENT);
                 userRepository.save(student);
                 
